@@ -14,11 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.contrib import admin # type: ignore
-from django.urls import path, include # type: ignore
-from django.views.generic import TemplateView # type: ignore
-from django.conf.urls.static import static # type: ignore
-from django.conf import settings # type: ignore
+from django.contrib import admin  # type: ignore
+from django.urls import path, include  # type: ignore
+from django.views.generic import TemplateView  # type: ignore
+from django.conf.urls.static import static  # type: ignore
+from django.conf import settings  # type: ignore
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -35,3 +35,4 @@ urlpatterns = [
         "postreview/<int:dealer_id>", TemplateView.as_view(template_name="index.html")
     ),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
